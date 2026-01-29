@@ -1,0 +1,35 @@
+# Fichier d'exemple pour les variables Terraform
+# Copiez ce fichier vers terraform.tfvars et remplissez avec vos vraies valeurs
+# IMPORTANT: Ne commitez JAMAIS terraform.tfvars dans Git (il contient des données sensibles)
+
+# Votre numéro d'étudiant
+student_number = "1234567890"
+
+# Votre adresse IP pour l'accès SSH (trouvez-la sur https://whatismyipaddress.com/)
+# Format: "x.x.x.x/32"
+my_ip = "x.x.x.x/32"
+
+# Nom de votre paire de clés SSH existante dans AWS
+# Créez-la via AWS Console > EC2 > Key Pairs si nécessaire
+key_pair_name = ""
+
+# Configuration AWS (valeurs par défaut recommandées)
+aws_region = "eu-west-2"  # London
+
+# Configuration VPC (valeurs par défaut selon le document)
+vpc_cidr                      = "10.145.0.0/16"
+subnet_public_bastion_cidr    = "10.145.10.0/24"
+subnet_private_servers_cidr   = "10.145.200.0/24"
+subnet_private_databases_cidr = "10.145.55.0/26"
+subnet_dmz_web_cidr          = "10.145.60.0/27"
+subnet_private_apps_cidr     = "10.145.100.0/24"
+
+# Type d'instance (t2.micro est gratuit)
+instance_type = "t2.micro"
+
+# NAT Gateway (désactivé par défaut pour éviter les coûts)
+enable_nat_gateway = false
+
+# Environnement
+environment = "training"
+project_name = "Aws_Infrastructure"
